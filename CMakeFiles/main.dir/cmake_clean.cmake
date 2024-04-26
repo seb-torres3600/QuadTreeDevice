@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/data.cpp.o"
   "CMakeFiles/main.dir/src/data.cpp.o.d"
+  "CMakeFiles/main.dir/src/helpers.cpp.o"
+  "CMakeFiles/main.dir/src/helpers.cpp.o.d"
   "CMakeFiles/main.dir/src/main.cpp.o"
   "CMakeFiles/main.dir/src/main.cpp.o.d"
   "CMakeFiles/main.dir/src/quadTree.cpp.o"

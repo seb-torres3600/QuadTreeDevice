@@ -141,8 +141,50 @@ int Quadtree:: findQuadrant(std::vector<std::vector<float>> boundaries, Zone z){
 }
 
 bool Quadtree:: fits(NodeBoundaries boundary, Zone z){
-    if(z.coordinates[0] >= boundary.bottom_x && z.coordinates[2] <= boundary.top_x){
-        if(z.coordinates[1] >= boundary.bottom_y && z.coordinates[3] <= boundary.top_y){
+
+    if(z.shape == "CIRCLE"){
+        return circleFits(boundary, z);
+    } else if(z.shape == "TRIANGLE"){
+        return triangleFits(boundary, z);
+    } else if(z.shape == "RECTANGLE"){
+        return rectangleFits(boundary, z);
+    } 
+
+    return false;
+}
+
+bool Quadtree:: rectangleFits(NodeBoundaries boundary, Zone z){
+    if(z.rectangle.bottomPoint.x >= boundary.bottom_x && z.rectangle.topPoint.x <= boundary.top_x){
+        if(z.rectangle.bottomPoint.y >= boundary.bottom_y && z.rectangle.topPoint.y <= boundary.top_y){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Quadtree:: circleFits(NodeBoundaries boundary, Zone z){
+    float left_x = z.circle.centerPoint.x - z.circle.radius;
+    float lower_y = z.circle.centerPoint.y - z.circle.radius;
+    float right_x = z.circle.centerPoint.x + z.circle.radius;
+    float upper_y = z.circle.centerPoint.y + z.circle.radius;
+
+    if(left_x >= boundary.bottom_x && right_x <= boundary.top_x){
+        if(lower_y >= boundary.top_x && upper_y <= boundary.top_y){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Quadtree:: triangleFits(NodeBoundaries boundary, Zone z){
+    int farthest_left = std::min(z.triangle.leftPoint.x, std:: min(z.triangle.centerPoint.x, z.triangle.rightPoint.x));
+    int farthest_right = std::max(z.triangle.leftPoint.x, std:: max(z.triangle.centerPoint.x, z.triangle.rightPoint.x));
+
+    int highest_point = std::max(z.triangle.leftPoint.y, std:: max(z.triangle.centerPoint.y, z.triangle.rightPoint.y));
+    int lowest_point = std::min(z.triangle.leftPoint.y, std:: min(z.triangle.centerPoint.y, z.triangle.rightPoint.y));
+
+    if (farthest_left >= boundary.bottom_x && farthest_right <= boundary.top_x){
+        if(highest_point <= boundary.top_y && lowest_point >= boundary.bottom_y){
             return true;
         }
     }

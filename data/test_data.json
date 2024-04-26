@@ -58,5 +58,26 @@
         ],
         "id": "6",
         "shape": "rectangle"
+    },
+    {
+        "coordinates": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "id": "7",
+        "shape": "circle"
+    },
+    {
+        "coordinates": [
+            19.0,
+            0.0,
+            19.5,
+            1.0,
+            20.0,
+            0.0
+        ],
+        "id": "8",
+        "shape": "triangle"
     }
 ]

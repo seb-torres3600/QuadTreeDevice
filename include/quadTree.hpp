@@ -5,6 +5,7 @@
 #include <vector>
 #include <stdexcept>
 #include <cmath>
+#include <variant> 
 
 #include "zone.hpp"
 
@@ -45,6 +46,9 @@ class Quadtree{
         bool fits(NodeBoundaries boundary, Zone z);
         bool pointFits(NodeBoundaries boundary, std::vector<float> point);
         int findPointQuadrant(std::vector<std::vector<float>> boundaries, std::vector<float> point);
+        bool rectangleFits(NodeBoundaries boundary, Zone z);
+        bool circleFits(NodeBoundaries boundary, Zone z);
+        bool triangleFits(NodeBoundaries boundary, Zone z);
 };
 
 #endif

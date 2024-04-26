@@ -71,4 +71,6 @@ int main(int argc, char* argv[]){
     data_tree->search({4.5, 9.5});
     data_tree->search({10.0, 7.5});
     data_tree->search({14.0, 11.0});
+    data_tree->search({1.0,1.0});
+    data_tree->search({19.5, 0.5});
 }
