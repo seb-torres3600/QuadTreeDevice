@@ -1,3 +1,0 @@
-/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles/main.dir
-/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles/edit_cache.dir
-/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles/rebuild_cache.dir
