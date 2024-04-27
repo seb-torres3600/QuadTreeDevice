@@ -7,8 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/main.cpp.o.d"
   "CMakeFiles/main.dir/src/quadTree.cpp.o"
   "CMakeFiles/main.dir/src/quadTree.cpp.o.d"
-  "CMakeFiles/main.dir/src/zone.cpp.o"
-  "CMakeFiles/main.dir/src/zone.cpp.o.d"
+  "CMakeFiles/main.dir/src/structs.cpp.o"
+  "CMakeFiles/main.dir/src/structs.cpp.o.d"
   "main"
   "main.pdb"
 )

@@ -7,30 +7,15 @@
 #include <cmath>
 #include <variant> 
 
-#include "zone.hpp"
-
-
-
-struct NodeBoundaries {
-    float bottom_x;
-    float bottom_y;
-    float top_x;
-    float top_y;
-    NodeBoundaries(){}
-    NodeBoundaries(std::vector<float> coords){
-        bottom_x = coords[0];
-        bottom_y = coords[1];
-        top_x = coords[2];
-        top_y = coords[3];
-    }
-};
+#include "structs.hpp"
+#include "helpers.hpp"
 
 class Quadtree{
     public:
         Quadtree(std::vector<float> nd_coord);
         ~Quadtree();
         void insert(Zone z);
-        bool search(std:: vector<float> point);
+        bool search(Point location);
         void printTree();
     private:
         NodeBoundaries nd_bndr;
@@ -44,11 +29,8 @@ class Quadtree{
         std::vector<std::vector<float>> split(NodeBoundaries boundary);
         int findQuadrant(std::vector<std::vector<float>> boundaries, Zone z);
         bool fits(NodeBoundaries boundary, Zone z);
-        bool pointFits(NodeBoundaries boundary, std::vector<float> point);
-        int findPointQuadrant(std::vector<std::vector<float>> boundaries, std::vector<float> point);
-        bool rectangleFits(NodeBoundaries boundary, Zone z);
-        bool circleFits(NodeBoundaries boundary, Zone z);
-        bool triangleFits(NodeBoundaries boundary, Zone z);
+        int findPointQuadrant(std::vector<std::vector<float>> boundaries, Point location);
+        bool pointFits(Zone z, Point location);
 };
 
 #endif

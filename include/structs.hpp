@@ -5,14 +5,26 @@
 #include <vector>
 #include <string>
 #include <nlohmann/json.hpp>
-#include <variant> 
 
-#include "helpers.hpp"
+
+struct NodeBoundaries {
+    float bottom_x;
+    float bottom_y;
+    float top_x;
+    float top_y;
+    NodeBoundaries(){}
+    NodeBoundaries(std::vector<float> coords){
+        bottom_x = coords[0];
+        bottom_y = coords[1];
+        top_x = coords[2];
+        top_y = coords[3];
+    }
+};
 
 struct Point{
-    int x;
-    int y;
-    Point(int x, int y){
+    float x;
+    float y;
+    Point(float x, float y){
         this->x = x;
         this->y = y;
     }
@@ -60,19 +72,20 @@ struct Zone {
     Rectangle rectangle;
     Circle circle;
     Triangle triangle;
-    
-    
+
     Zone(nlohmann::json& zone_data){
         if(zone_data.find("shape") != zone_data.end()){
-            this->shape = toUpperCase(zone_data["shape"]);
+            this->shape = zone_data.at("shape").get<std::string>();
+            // Make shape string to upper for consistency regardless of input
+            std::transform(this->shape.begin(), this->shape.end(), this->shape.begin(), ::toupper);
         }
 
         if(zone_data.find("id") != zone_data.end()){
-            this->zone_id = zone_data["id"];
+            this->zone_id = zone_data.at("id").get<std::string>();
         }
 
         if(zone_data.find("coordinates") != zone_data.end()){
-            nlohmann::json coord_json = zone_data["coordinates"];
+            nlohmann::json coord_json = zone_data.at("coordinates");
             if(coord_json.is_array()){
                 for (const auto& coord : coord_json) {
                     coordinates.push_back(coord.get<float>());

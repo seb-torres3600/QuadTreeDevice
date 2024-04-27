@@ -5,8 +5,8 @@
 #include <getopt.h>
 
 #include "../include/data.hpp"
-#include "../include/zone.hpp"
 #include "../include/quadTree.hpp"
+#include "../include/structs.hpp"
 
 #include <nlohmann/json.hpp>
 
@@ -18,18 +18,18 @@ int main(int argc, char* argv[]){
 
     // Creating the long options
     static struct option long_options[] = {
-            {"name",   no_argument,         0,  'n' },
+            {"author",   no_argument,         0,  'a' },
             {"input_json", required_argument, 0, 'i'},
             {0, 0, 0, 0}
     };
 
     while(opt != -1){
         int index = 0;
-        opt = getopt_long(argc, argv, "n:",long_options, &index);
+        opt = getopt_long(argc, argv, "a:",long_options, &index);
         switch (opt){
-            case 'n':
-                std:: cout << "Sebastian Torres" << std:: endl;
-                break;
+            case 'a':
+                std:: cout << "Author: Sebastian Torres" << std:: endl;
+                return 0;
             case 'i':
                 input_file = optarg;
                 break;
@@ -52,25 +52,12 @@ int main(int argc, char* argv[]){
         Zone tmp_zone =  Zone(object);
         zones.push_back(tmp_zone);
     }
-
+    
     Quadtree* data_tree = new Quadtree({0.0,0.0, 20.0, 16.0});
 
-    /*
-    for(auto z: zones[1].coordinates){
-        std:: cout << z << std::endl;
-    }
-    std:: cout << "====" << std::endl;
-    std:: cout << "====" << std::endl;
-    */
-
-    
     for(auto zone: zones){
         data_tree->insert(zone);
     }
     
-    data_tree->search({4.5, 9.5});
-    data_tree->search({10.0, 7.5});
-    data_tree->search({14.0, 11.0});
-    data_tree->search({1.0,1.0});
-    data_tree->search({19.5, 0.5});
+    data_tree->search(Point(4.5, 9.5));
 }

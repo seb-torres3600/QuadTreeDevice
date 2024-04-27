@@ -225,29 +225,29 @@ src/quadTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/quadTree.cpp.s
 .PHONY : src/quadTree.cpp.s
 
-src/zone.o: src/zone.cpp.o
-.PHONY : src/zone.o
+src/structs.o: src/structs.cpp.o
+.PHONY : src/structs.o
 
 # target to build an object file
-src/zone.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/zone.cpp.o
-.PHONY : src/zone.cpp.o
+src/structs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/structs.cpp.o
+.PHONY : src/structs.cpp.o
 
-src/zone.i: src/zone.cpp.i
-.PHONY : src/zone.i
+src/structs.i: src/structs.cpp.i
+.PHONY : src/structs.i
 
 # target to preprocess a source file
-src/zone.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/zone.cpp.i
-.PHONY : src/zone.cpp.i
+src/structs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/structs.cpp.i
+.PHONY : src/structs.cpp.i
 
-src/zone.s: src/zone.cpp.s
-.PHONY : src/zone.s
+src/structs.s: src/structs.cpp.s
+.PHONY : src/structs.s
 
 # target to generate assembly for a file
-src/zone.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/zone.cpp.s
-.PHONY : src/zone.cpp.s
+src/structs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/structs.cpp.s
+.PHONY : src/structs.cpp.s
 
 # Help Target
 help:
@@ -270,9 +270,9 @@ help:
 	@echo "... src/quadTree.o"
 	@echo "... src/quadTree.i"
 	@echo "... src/quadTree.s"
-	@echo "... src/zone.o"
-	@echo "... src/zone.i"
-	@echo "... src/zone.s"
+	@echo "... src/structs.o"
+	@echo "... src/structs.i"
+	@echo "... src/structs.s"
 .PHONY : help
 
 

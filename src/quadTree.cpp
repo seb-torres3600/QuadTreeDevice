@@ -54,19 +54,17 @@ void Quadtree:: insert(Zone z){
     return;
 }
 
-bool Quadtree:: search(std::vector<float> point){
+bool Quadtree:: search(Point location){
     std::vector<std::vector<float>> boundaries = split(nd_bndr);
-    int quadrant = findPointQuadrant(boundaries, point);
+    int quadrant = findPointQuadrant(boundaries, location);
     for(auto zn: zns){
-        std::vector<float> coords = zn.coordinates;
-        if(point[0] >= coords[0] && point[0] <= coords[2]){
-            if(point[1] >= coords[1] && point[1] <= coords[3]){
-                std::cout << "Found" << std::endl;
-                std:: cout << "Point("<< point[0] << "," << point[1] <<") - found in zone: " << zn.zone_id << std::endl;
-                return true;
-            }
+        if (pointFits(zn, location)){
+            std::cout << "Found" << std::endl;
+            std:: cout << "Point("<< location.x << "," << location.y <<") - found in zone: " << zn.zone_id << std::endl;
+            return true;
         }
     }
+
     std:: cout << quadrant+1 << "->";
 
     switch(quadrant){
@@ -74,25 +72,25 @@ bool Quadtree:: search(std::vector<float> point){
             if(topRight == NULL){
                 return false;
             }
-            topRight->search(point);
+            topRight->search(location);
             break;
         case 1:
             if(topLeft == NULL){
                 return false;
             }
-            topLeft->search(point);
+            topLeft->search(location);
             break;
         case 2:
             if(bottomLeft == NULL){
                 return false;
             }
-            bottomLeft->search(point);
+            bottomLeft->search(location);
             break;
         case 3:
             if(bottomRight == NULL){
                 return false;
             }
-            bottomRight->search(point);
+            bottomRight->search(location);
             break;
         default:
             break;
@@ -143,73 +141,40 @@ int Quadtree:: findQuadrant(std::vector<std::vector<float>> boundaries, Zone z){
 bool Quadtree:: fits(NodeBoundaries boundary, Zone z){
 
     if(z.shape == "CIRCLE"){
-        return circleFits(boundary, z);
+        return circleFitsInBoundary(boundary, z);
     } else if(z.shape == "TRIANGLE"){
-        return triangleFits(boundary, z);
+        return triangleFitsInBoundary(boundary, z);
     } else if(z.shape == "RECTANGLE"){
-        return rectangleFits(boundary, z);
+        return rectangleFitsInBoundary(boundary, z);
     } 
 
     return false;
 }
 
-bool Quadtree:: rectangleFits(NodeBoundaries boundary, Zone z){
-    if(z.rectangle.bottomPoint.x >= boundary.bottom_x && z.rectangle.topPoint.x <= boundary.top_x){
-        if(z.rectangle.bottomPoint.y >= boundary.bottom_y && z.rectangle.topPoint.y <= boundary.top_y){
-            return true;
-        }
-    }
+bool Quadtree:: pointFits(Zone z, Point location){
+
+    if(z.shape == "CIRCLE"){
+        return pointFitsInCircle(z, location);
+    } else if(z.shape == "TRIANGLE"){
+        return pointFitsInTriangle(z, location);
+    } else if(z.shape == "RECTANGLE"){
+        return pointFitsInRectangle(z, location);
+    } 
+
     return false;
 }
 
-bool Quadtree:: circleFits(NodeBoundaries boundary, Zone z){
-    float left_x = z.circle.centerPoint.x - z.circle.radius;
-    float lower_y = z.circle.centerPoint.y - z.circle.radius;
-    float right_x = z.circle.centerPoint.x + z.circle.radius;
-    float upper_y = z.circle.centerPoint.y + z.circle.radius;
-
-    if(left_x >= boundary.bottom_x && right_x <= boundary.top_x){
-        if(lower_y >= boundary.top_x && upper_y <= boundary.top_y){
-            return true;
-        }
-    }
-    return false;
-}
-
-bool Quadtree:: triangleFits(NodeBoundaries boundary, Zone z){
-    int farthest_left = std::min(z.triangle.leftPoint.x, std:: min(z.triangle.centerPoint.x, z.triangle.rightPoint.x));
-    int farthest_right = std::max(z.triangle.leftPoint.x, std:: max(z.triangle.centerPoint.x, z.triangle.rightPoint.x));
-
-    int highest_point = std::max(z.triangle.leftPoint.y, std:: max(z.triangle.centerPoint.y, z.triangle.rightPoint.y));
-    int lowest_point = std::min(z.triangle.leftPoint.y, std:: min(z.triangle.centerPoint.y, z.triangle.rightPoint.y));
-
-    if (farthest_left >= boundary.bottom_x && farthest_right <= boundary.top_x){
-        if(highest_point <= boundary.top_y && lowest_point >= boundary.bottom_y){
-            return true;
-        }
-    }
-    return false;
-}
-
-int Quadtree:: findPointQuadrant(std::vector<std::vector<float>> boundaries, std::vector<float> point){
+int Quadtree:: findPointQuadrant(std::vector<std::vector<float>> boundaries, Point location){
 
     for(int i = 0; i < 4; i++){
         NodeBoundaries boundary(boundaries[i]);
-        if (pointFits(boundary, point)){
+        if (pointFitsInBoundary(boundary, location)){
             return i;
         }
     }
     return -1;
 }
 
-bool Quadtree:: pointFits(NodeBoundaries boundary, std::vector<float> point){
-    if(point[0] >= boundary.bottom_x && point[0] <= boundary.top_x){
-        if(point[1] >= boundary.bottom_y && point[1] <= boundary.top_y){
-            return true;
-        }
-    }
-    return false;
-}
 
 std::vector<std::vector<float>> Quadtree:: split(NodeBoundaries boundary){
     std::vector<NodeBoundaries> tmp_zones;

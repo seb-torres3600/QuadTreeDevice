@@ -73,71 +73,71 @@ CMakeFiles/main.dir/src/data.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/data.cpp.o: src/data.cpp
 CMakeFiles/main.dir/src/data.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/data.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/data.cpp.o -MF CMakeFiles/main.dir/src/data.cpp.o.d -o CMakeFiles/main.dir/src/data.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/data.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/data.cpp.o -MF CMakeFiles/main.dir/src/data.cpp.o.d -o CMakeFiles/main.dir/src/data.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/data.cpp
 
 CMakeFiles/main.dir/src/data.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/data.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/data.cpp > CMakeFiles/main.dir/src/data.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/data.cpp > CMakeFiles/main.dir/src/data.cpp.i
 
 CMakeFiles/main.dir/src/data.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/data.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/data.cpp -o CMakeFiles/main.dir/src/data.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/data.cpp -o CMakeFiles/main.dir/src/data.cpp.s
 
 CMakeFiles/main.dir/src/helpers.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/helpers.cpp.o: src/helpers.cpp
 CMakeFiles/main.dir/src/helpers.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/helpers.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/helpers.cpp.o -MF CMakeFiles/main.dir/src/helpers.cpp.o.d -o CMakeFiles/main.dir/src/helpers.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/helpers.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/helpers.cpp.o -MF CMakeFiles/main.dir/src/helpers.cpp.o.d -o CMakeFiles/main.dir/src/helpers.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/helpers.cpp
 
 CMakeFiles/main.dir/src/helpers.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/helpers.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/helpers.cpp > CMakeFiles/main.dir/src/helpers.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/helpers.cpp > CMakeFiles/main.dir/src/helpers.cpp.i
 
 CMakeFiles/main.dir/src/helpers.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/helpers.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/helpers.cpp -o CMakeFiles/main.dir/src/helpers.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/helpers.cpp -o CMakeFiles/main.dir/src/helpers.cpp.s
 
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/main.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/main.cpp
 
 CMakeFiles/main.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/main.cpp > CMakeFiles/main.dir/src/main.cpp.i
 
 CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/main.cpp -o CMakeFiles/main.dir/src/main.cpp.s
 
 CMakeFiles/main.dir/src/quadTree.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/quadTree.cpp.o: src/quadTree.cpp
 CMakeFiles/main.dir/src/quadTree.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/quadTree.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/quadTree.cpp.o -MF CMakeFiles/main.dir/src/quadTree.cpp.o.d -o CMakeFiles/main.dir/src/quadTree.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/quadTree.cpp
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/quadTree.cpp.o -MF CMakeFiles/main.dir/src/quadTree.cpp.o.d -o CMakeFiles/main.dir/src/quadTree.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/quadTree.cpp
 
 CMakeFiles/main.dir/src/quadTree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/quadTree.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/quadTree.cpp > CMakeFiles/main.dir/src/quadTree.cpp.i
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/quadTree.cpp > CMakeFiles/main.dir/src/quadTree.cpp.i
 
 CMakeFiles/main.dir/src/quadTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/quadTree.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/quadTree.cpp -o CMakeFiles/main.dir/src/quadTree.cpp.s
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/quadTree.cpp -o CMakeFiles/main.dir/src/quadTree.cpp.s
 
-CMakeFiles/main.dir/src/zone.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/zone.cpp.o: src/zone.cpp
-CMakeFiles/main.dir/src/zone.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/zone.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/zone.cpp.o -MF CMakeFiles/main.dir/src/zone.cpp.o.d -o CMakeFiles/main.dir/src/zone.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/zone.cpp
+CMakeFiles/main.dir/src/structs.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/structs.cpp.o: src/structs.cpp
+CMakeFiles/main.dir/src/structs.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/structs.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/structs.cpp.o -MF CMakeFiles/main.dir/src/structs.cpp.o.d -o CMakeFiles/main.dir/src/structs.cpp.o -c /Users/seto2103/GITHUB/QuadTreeDevice/src/structs.cpp
 
-CMakeFiles/main.dir/src/zone.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/zone.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/zone.cpp > CMakeFiles/main.dir/src/zone.cpp.i
+CMakeFiles/main.dir/src/structs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/structs.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/seto2103/GITHUB/QuadTreeDevice/src/structs.cpp > CMakeFiles/main.dir/src/structs.cpp.i
 
-CMakeFiles/main.dir/src/zone.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/zone.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/zone.cpp -o CMakeFiles/main.dir/src/zone.cpp.s
+CMakeFiles/main.dir/src/structs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/structs.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/seto2103/GITHUB/QuadTreeDevice/src/structs.cpp -o CMakeFiles/main.dir/src/structs.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -145,7 +145,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/src/helpers.cpp.o" \
 "CMakeFiles/main.dir/src/main.cpp.o" \
 "CMakeFiles/main.dir/src/quadTree.cpp.o" \
-"CMakeFiles/main.dir/src/zone.cpp.o"
+"CMakeFiles/main.dir/src/structs.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -154,7 +154,7 @@ main: CMakeFiles/main.dir/src/data.cpp.o
 main: CMakeFiles/main.dir/src/helpers.cpp.o
 main: CMakeFiles/main.dir/src/main.cpp.o
 main: CMakeFiles/main.dir/src/quadTree.cpp.o
-main: CMakeFiles/main.dir/src/zone.cpp.o
+main: CMakeFiles/main.dir/src/structs.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/seto2103/GITHUB/QuadTreeDevice/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable main"

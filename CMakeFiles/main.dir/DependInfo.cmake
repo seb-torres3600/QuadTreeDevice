@@ -12,7 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/seto2103/GITHUB/QuadTreeDevice/src/helpers.cpp" "CMakeFiles/main.dir/src/helpers.cpp.o" "gcc" "CMakeFiles/main.dir/src/helpers.cpp.o.d"
   "/Users/seto2103/GITHUB/QuadTreeDevice/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   "/Users/seto2103/GITHUB/QuadTreeDevice/src/quadTree.cpp" "CMakeFiles/main.dir/src/quadTree.cpp.o" "gcc" "CMakeFiles/main.dir/src/quadTree.cpp.o.d"
-  "/Users/seto2103/GITHUB/QuadTreeDevice/src/zone.cpp" "CMakeFiles/main.dir/src/zone.cpp.o" "gcc" "CMakeFiles/main.dir/src/zone.cpp.o.d"
+  "/Users/seto2103/GITHUB/QuadTreeDevice/src/structs.cpp" "CMakeFiles/main.dir/src/structs.cpp.o" "gcc" "CMakeFiles/main.dir/src/structs.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
