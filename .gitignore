@@ -11,10 +11,6 @@ cmake_install.cmake
 CMakeLists.txt.user
 Makefile
 
-# Ignore generated files by IDEs
-.vscode/
-.idea/
-
 # Ignore dependencies and installed packages
 lib/
 vendor/
