@@ -14,11 +14,16 @@ Quadtree::~Quadtree() {
     delete bottomLeft;
     delete bottomRight;
 }
+ 
+NodeBoundaries Quadtree:: getBoundaries(){
+    return nd_bndr;
+}
 
 void Quadtree:: insert(Zone z){
     std::vector<std::vector<float>> boundaries = split(nd_bndr);
     int quadrant = findQuadrant(boundaries, z);
     if(quadrant == -1){
+        logger->info("Inserting zone ", std::to_string(z.zone_id));
         zns.push_back(z);
         return;
     }
@@ -29,25 +34,25 @@ void Quadtree:: insert(Zone z){
                 topRight = new Quadtree(boundaries[quadrant]);
             }
             topRight->insert(z);
-            return;
+            break;
         case 1:
             if(topLeft == NULL){
                 topLeft = new Quadtree(boundaries[quadrant]);
             }
             topLeft->insert(z);
-            return;
+            break;
         case 2:
             if(bottomLeft == NULL){
                 bottomLeft = new Quadtree(boundaries[quadrant]);
             }
             bottomLeft->insert(z);
-            return;
+            break;
         case 3:
             if(bottomRight == NULL){
                 bottomRight = new Quadtree(boundaries[quadrant]);
             }
             bottomRight->insert(z);
-            return;
+            break;
         default:
             return;
     }
@@ -55,17 +60,15 @@ void Quadtree:: insert(Zone z){
 }
 
 bool Quadtree:: search(Point location){
-    std::vector<std::vector<float>> boundaries = split(nd_bndr);
-    int quadrant = findPointQuadrant(boundaries, location);
+    Point center = getCenterPoint(nd_bndr);
+    int quadrant = findPointQuadrant(center, location);
+    int zone_number = 0;
     for(auto zn: zns){
         if (pointFits(zn, location)){
-            std::cout << "Found" << std::endl;
-            std:: cout << "Point("<< location.x << "," << location.y <<") - found in zone: " << zn.zone_id << std::endl;
+            logger->info("Point(" + std::to_string(location.x) + "," + std::to_string(location.y) +") - found in zone: " + std::to_string(zn.zone_id));
             return true;
         }
     }
-
-    std:: cout << quadrant+1 << "->";
 
     switch(quadrant){
         case 0:
@@ -125,13 +128,6 @@ int Quadtree:: findQuadrant(std::vector<std::vector<float>> boundaries, Zone z){
     for(int i = 0; i < 4; i++){
         NodeBoundaries boundary(boundaries[i]);
         if (fits(boundary, z)){
-            /*
-            std:: cout << "---------------" << std::endl;
-            std:: cout << boundary.bottom_x << std::endl;
-            std:: cout << boundary.bottom_y << std::endl;
-            std:: cout << boundary.top_x << std::endl;
-            std:: cout << boundary.top_y << std::endl;
-            */
             return i;
         }
     }
@@ -159,19 +155,35 @@ bool Quadtree:: pointFits(Zone z, Point location){
         return pointFitsInTriangle(z, location);
     } else if(z.shape == "RECTANGLE"){
         return pointFitsInRectangle(z, location);
-    } 
+    } else{
+        logger->error("Unknown shape");
+    }
 
     return false;
 }
 
-int Quadtree:: findPointQuadrant(std::vector<std::vector<float>> boundaries, Point location){
-
-    for(int i = 0; i < 4; i++){
-        NodeBoundaries boundary(boundaries[i]);
-        if (pointFitsInBoundary(boundary, location)){
-            return i;
+int Quadtree:: findPointQuadrant(Point center, Point location){
+    /*
+        Find what quadrant the point fits in 
+    */
+    // if location on right side of boundary
+    if(center.x <= location.x){
+        // if location above center line then we are in quadrant 1
+        if(center.y <= location.y){
+            return 1;
         }
+        // otherwise we are in quadrant 4
+        return 4;
+    // if location on left side     
+    } else {
+        // if we are above center line, we are in quadrant 2
+        if(center.y <= location.y){
+            return 2;
+        }
+        // otherwise in quadrant 3
+        return 3;
     }
+    // otherwise we don't fit in any quadrant
     return -1;
 }
 
@@ -206,4 +218,14 @@ std::vector<std::vector<float>> Quadtree:: split(NodeBoundaries boundary){
             {left_mid_x, left_mid_y, mid_top_x, mid_top_y}, 
             {left_bottom_x, left_bottom_y, mid_mid_x, left_mid_y}, 
             {mid_bottom_x, mid_bottom_y, right_mid_x, right_mid_y}};
+}
+
+Point Quadtree:: getCenterPoint(NodeBoundaries boundary){
+    float mid_x = std::abs(boundary.bottom_x - boundary.top_x)/2;
+    float mid_y = std::abs(boundary.bottom_y - boundary.top_y)/2;
+    float mid_mid_x = boundary.bottom_x + mid_x;
+    float mid_mid_y = boundary.bottom_y + mid_y;
+    
+    return Point(mid_mid_x, mid_mid_y);
+
 }

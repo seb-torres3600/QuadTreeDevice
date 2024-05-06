@@ -153,6 +153,30 @@ src/data.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/data.cpp.s
 .PHONY : src/data.cpp.s
 
+src/device.o: src/device.cpp.o
+.PHONY : src/device.o
+
+# target to build an object file
+src/device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/device.cpp.o
+.PHONY : src/device.cpp.o
+
+src/device.i: src/device.cpp.i
+.PHONY : src/device.i
+
+# target to preprocess a source file
+src/device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/device.cpp.i
+.PHONY : src/device.cpp.i
+
+src/device.s: src/device.cpp.s
+.PHONY : src/device.s
+
+# target to generate assembly for a file
+src/device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/device.cpp.s
+.PHONY : src/device.cpp.s
+
 src/helpers.o: src/helpers.cpp.o
 .PHONY : src/helpers.o
 
@@ -176,6 +200,30 @@ src/helpers.s: src/helpers.cpp.s
 src/helpers.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/helpers.cpp.s
 .PHONY : src/helpers.cpp.s
+
+src/logger.o: src/logger.cpp.o
+.PHONY : src/logger.o
+
+# target to build an object file
+src/logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/logger.cpp.o
+.PHONY : src/logger.cpp.o
+
+src/logger.i: src/logger.cpp.i
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/logger.cpp.i
+.PHONY : src/logger.cpp.i
+
+src/logger.s: src/logger.cpp.s
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/logger.cpp.s
+.PHONY : src/logger.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -225,6 +273,30 @@ src/quadTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/quadTree.cpp.s
 .PHONY : src/quadTree.cpp.s
 
+src/requests.o: src/requests.cpp.o
+.PHONY : src/requests.o
+
+# target to build an object file
+src/requests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/requests.cpp.o
+.PHONY : src/requests.cpp.o
+
+src/requests.i: src/requests.cpp.i
+.PHONY : src/requests.i
+
+# target to preprocess a source file
+src/requests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/requests.cpp.i
+.PHONY : src/requests.cpp.i
+
+src/requests.s: src/requests.cpp.s
+.PHONY : src/requests.s
+
+# target to generate assembly for a file
+src/requests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/requests.cpp.s
+.PHONY : src/requests.cpp.s
+
 src/structs.o: src/structs.cpp.o
 .PHONY : src/structs.o
 
@@ -261,15 +333,24 @@ help:
 	@echo "... src/data.o"
 	@echo "... src/data.i"
 	@echo "... src/data.s"
+	@echo "... src/device.o"
+	@echo "... src/device.i"
+	@echo "... src/device.s"
 	@echo "... src/helpers.o"
 	@echo "... src/helpers.i"
 	@echo "... src/helpers.s"
+	@echo "... src/logger.o"
+	@echo "... src/logger.i"
+	@echo "... src/logger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/quadTree.o"
 	@echo "... src/quadTree.i"
 	@echo "... src/quadTree.s"
+	@echo "... src/requests.o"
+	@echo "... src/requests.i"
+	@echo "... src/requests.s"
 	@echo "... src/structs.o"
 	@echo "... src/structs.i"
 	@echo "... src/structs.s"

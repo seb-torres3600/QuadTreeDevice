@@ -6,7 +6,6 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
-
 struct NodeBoundaries {
     float bottom_x;
     float bottom_y;
@@ -24,6 +23,10 @@ struct NodeBoundaries {
 struct Point{
     float x;
     float y;
+    Point(std:: vector<float> coords){
+        this->x = coords[0];
+        this->y = coords[1];
+    }
     Point(float x, float y){
         this->x = x;
         this->y = y;
@@ -67,7 +70,7 @@ struct Rectangle{
 
 struct Zone {
     std:: vector<float> coordinates;
-    std:: string zone_id;
+    int zone_id;
     std:: string shape;
     Rectangle rectangle;
     Circle circle;
@@ -81,7 +84,7 @@ struct Zone {
         }
 
         if(zone_data.find("id") != zone_data.end()){
-            this->zone_id = zone_data.at("id").get<std::string>();
+            this->zone_id = zone_data.at("id").get<int>();
         }
 
         if(zone_data.find("coordinates") != zone_data.end()){

@@ -1,5 +1,7 @@
 #include "../include/helpers.hpp"
+#include "../include/logger.hpp"
 
+std::shared_ptr<spdlog::logger> logger = Logger::getLogger();
 
 bool rectangleFitsInBoundary(NodeBoundaries boundary, Zone z){
     if(z.rectangle.bottomPoint.x >= boundary.bottom_x && z.rectangle.topPoint.x <= boundary.top_x){
@@ -86,4 +88,30 @@ bool pointFitsInTriangle(Zone z, Point location){
         }
     }
     return false;
+}
+
+bool needToRefresh(NodeBoundaries boundary, Point location, float threshold){
+    float distance_to_top_x = boundary.top_x - location.x;
+    float distance_to_top_y = boundary.top_y - location.y;
+    float distance_to_bottom_x = location.x - boundary.bottom_x;
+    float distance_to_bottom_y = location.y - boundary.bottom_y;
+
+    if(distance_to_bottom_x <= threshold){
+        logger->info("Distance to bottom x is at or under threshold, we need to refresh");
+        return true;
+    } else if(distance_to_bottom_y <= threshold){
+        logger->info("Distance to bottom y is at or under threshold, we need to refresh");
+        return true;      
+    } else if(distance_to_top_x <= threshold){
+        logger->info("Distance to top x is at or under threshold, we need to refresh");
+        return true;
+    } else if(distance_to_top_y <= threshold){
+        logger->info("Distance to top y is at or under threshold, we need to refresh");
+        return true;
+    }
+    return false;
+}
+
+void printUsage(){
+    std:: cout << "Usage: " << std::endl;
 }

@@ -9,6 +9,7 @@
 
 #include "structs.hpp"
 #include "helpers.hpp"
+#include "logger.hpp"
 
 class Quadtree{
     public:
@@ -17,7 +18,10 @@ class Quadtree{
         void insert(Zone z);
         bool search(Point location);
         void printTree();
+        NodeBoundaries getBoundaries();
     private:
+        std::shared_ptr<spdlog::logger> logger = Logger::getLogger();
+
         NodeBoundaries nd_bndr;
         std:: vector<Zone> zns;
 
@@ -29,8 +33,9 @@ class Quadtree{
         std::vector<std::vector<float>> split(NodeBoundaries boundary);
         int findQuadrant(std::vector<std::vector<float>> boundaries, Zone z);
         bool fits(NodeBoundaries boundary, Zone z);
-        int findPointQuadrant(std::vector<std::vector<float>> boundaries, Point location);
+        int findPointQuadrant(Point center, Point location);
         bool pointFits(Zone z, Point location);
+        Point getCenterPoint(NodeBoundaries boundary);
 };
 
 #endif

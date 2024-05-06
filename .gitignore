@@ -21,6 +21,7 @@ vendor/
 # Ignore compiled files
 *.out
 
+data/
 # Ignore main 
 main
 

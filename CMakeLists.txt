@@ -13,6 +13,8 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
 
 # Add include directories
 include_directories(include /usr/local/include/)
+find_package(spdlog REQUIRED)
+find_package(fmt REQUIRED)
 
 # Add all source files in the src/ directory
 file(GLOB SOURCES "src/*.cpp")
@@ -20,3 +22,5 @@ file(GLOB SOURCES "src/*.cpp")
 # Create executable from sources
 add_executable(main ${SOURCES})
 
+# Link against required libraries
+target_link_libraries(main PRIVATE spdlog::spdlog fmt::fmt)

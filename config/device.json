@@ -1,0 +1,5 @@
+{
+    "size_of_area": 20,
+    "max_zones": 100000,
+    "threshold": 3
+}

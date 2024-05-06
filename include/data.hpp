@@ -5,21 +5,22 @@
 #include <fstream>
 #include <nlohmann/json.hpp>
 
-using namespace std;
-using json = nlohmann::json;
+#include "logger.hpp"
 
 class Data{
     private:
         Data();
         static Data* data_set;
-        json data;
-        string file;
+        nlohmann::json data;
+        std::string file;
+        std::shared_ptr<spdlog::logger> logger = Logger::getLogger();
+
     public:
         static Data* getInstance();
-        void setData(string _file);
-        json getData();
+        void setData(std::string _file);
+        nlohmann::json getData();
         void printData();
-        void writeData(string shape, vector<double> coord);
+        void writeData(std::string shape, std::vector<double> coord);
         void updateData();
 };
 

@@ -6,6 +6,7 @@
 #include <locale>
 
 #include "structs.hpp"
+#include "logger.hpp"
 
 
 bool rectangleFitsInBoundary(NodeBoundaries boundary, Zone z);
@@ -17,5 +18,7 @@ bool pointFitsInCircle(Zone z,  Point location);
 bool pointFitsInTriangle(Zone z,  Point location);
 
 bool pointFitsInBoundary(NodeBoundaries boundary, Point location);
+
+bool needToRefresh(NodeBoundaries boundary, Point location, float threshold);
 
 #endif

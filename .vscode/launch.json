@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/main",
-            "args": ["--input_json", "./data/test_data.json"],
+            "args": ["--input_json", "./data/1000x1000.json"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

@@ -13,14 +13,13 @@ Data* Data :: getInstance(){
     return data_set;
 }
 
-void Data :: setData(string _file){
+void Data :: setData(std:: string _file){
     file = _file;
     std::ifstream f(file);
-    data = json::parse(f);
-
+    data = nlohmann::json::parse(f);
 }
 
-json Data :: getData(){
+nlohmann::json Data :: getData(){
     return data;
 }
 
@@ -30,12 +29,12 @@ void Data :: printData(){
 
 void Data :: updateData(){
     std :: ifstream f(file);
-    data = json::parse(f);
+    data = nlohmann::json::parse(f);
 }
 
-void Data :: writeData(string shape, vector<double> coord){
-    json tmp;
-    tmp["id"] = to_string(data.size()+1);
+void Data :: writeData(std::string shape, std::vector<double> coord){
+    nlohmann::json tmp;
+    tmp["id"] = std::to_string(data.size()+1);
     tmp["shape"] = shape;
     tmp["coordinates"] = coord;
     data.push_back(tmp);
