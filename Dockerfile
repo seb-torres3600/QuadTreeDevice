@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 # Install CMake and other necessary packages
 RUN apt-get update && \
-    apt-get install -y build-essential cmake wget && \
+    apt-get install -y build-essential cmake wget libspdlog-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Install nlohmann/json.hpp
@@ -14,10 +14,12 @@ RUN mkdir -p /usr/local/include/nlohmann && \
 WORKDIR /QuadTreeDevice
 
 # Copy the CMakeLists.txt and your source code into the container
-COPY CMakeLists.txt /QuadTreeDevice/
-COPY src/ /QuadTreeDevice/src/
-COPY include/ /QuadTreeDevice/include/
-COPY data/ /QuadTreeDevice/data/
+COPY CMakeLists.txt .
+COPY src/ ./src
+COPY include/ ./include/
+COPY data/ ./data/
+COPY config/ ./config/
+
 
 # Create a build directory and run cmake to generate build files
 RUN mkdir build && \
@@ -25,7 +27,7 @@ RUN mkdir build && \
     cmake ..
 
 # Compile the project
-RUN cmake --build /QuadTreeDevice/build
+RUN cmake --build ./build
 
 # Specify the command to run on container start
-CMD ["/QuadTreeDevice/build/main", "--author"]
+# CMD ["./build/main", "--author"]
