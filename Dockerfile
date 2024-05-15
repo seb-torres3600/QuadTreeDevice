@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 # Install CMake and other necessary packages
 RUN apt-get update && \
-    apt-get install -y build-essential cmake wget libspdlog-dev && \
+    apt-get install -y build-essential cmake wget libspdlog-dev libcurl4-openssl-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Install nlohmann/json.hpp
@@ -17,7 +17,7 @@ WORKDIR /QuadTreeDevice
 COPY CMakeLists.txt .
 COPY src/ ./src
 COPY include/ ./include/
-COPY data/ ./data/
+# COPY data/ ./data/
 COPY config/ ./config/
 
 
@@ -28,6 +28,7 @@ RUN mkdir build && \
 
 # Compile the project
 RUN cmake --build ./build
+RUN mv ./build/main ./main
 
 # Specify the command to run on container start
-# CMD ["./build/main", "--author"]
+CMD ["./build/main", "--debug_level", "3"]

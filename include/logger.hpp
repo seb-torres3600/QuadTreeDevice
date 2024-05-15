@@ -11,7 +11,7 @@
 #include <spdlog/sinks/rotating_file_sink.h>
 
 namespace Logger {
-    void init(std::string log_directory, std:: string log_file);
+    void init(std::string log_directory, std:: string log_file, int log_level);
     std::shared_ptr<spdlog::logger> getLogger();
 }
 

@@ -4,9 +4,9 @@
 #include <iostream>
 #include <string>
 #include <locale>
+#include <vector>
 
 #include "structs.hpp"
-#include "logger.hpp"
 
 
 bool rectangleFitsInBoundary(NodeBoundaries boundary, Zone z);
@@ -20,5 +20,7 @@ bool pointFitsInTriangle(Zone z,  Point location);
 bool pointFitsInBoundary(NodeBoundaries boundary, Point location);
 
 bool needToRefresh(NodeBoundaries boundary, Point location, float threshold);
+
+std:: string convertAreaToString(std:: vector<float> areas);
 
 #endif

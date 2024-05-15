@@ -22,8 +22,9 @@ NodeBoundaries Quadtree:: getBoundaries(){
 void Quadtree:: insert(Zone z){
     std::vector<std::vector<float>> boundaries = split(nd_bndr);
     int quadrant = findQuadrant(boundaries, z);
+    logger->debug("Zone: " + std::to_string(z.zone_id) + " Quadrant:" + std::to_string(quadrant));
     if(quadrant == -1){
-        logger->info("Inserting zone ", std::to_string(z.zone_id));
+        logger->info("Inserting zone " + std::to_string(z.zone_id));
         zns.push_back(z);
         return;
     }
@@ -62,10 +63,9 @@ void Quadtree:: insert(Zone z){
 bool Quadtree:: search(Point location){
     Point center = getCenterPoint(nd_bndr);
     int quadrant = findPointQuadrant(center, location);
-    int zone_number = 0;
     for(auto zn: zns){
         if (pointFits(zn, location)){
-            logger->info("Point(" + std::to_string(location.x) + "," + std::to_string(location.y) +") - found in zone: " + std::to_string(zn.zone_id));
+            logger->critical("Point(" + std::to_string(location.x) + "," + std::to_string(location.y) +") - found in zone: " + std::to_string(zn.zone_id));
             return true;
         }
     }
@@ -158,7 +158,7 @@ bool Quadtree:: pointFits(Zone z, Point location){
     } else{
         logger->error("Unknown shape");
     }
-
+    
     return false;
 }
 

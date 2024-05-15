@@ -16,6 +16,9 @@ include_directories(include /usr/local/include/)
 find_package(spdlog REQUIRED)
 find_package(fmt REQUIRED)
 
+# Find libcurl package
+find_package(CURL REQUIRED)
+
 # Add all source files in the src/ directory
 file(GLOB SOURCES "src/*.cpp")
 
@@ -23,4 +26,4 @@ file(GLOB SOURCES "src/*.cpp")
 add_executable(main ${SOURCES})
 
 # Link against required libraries
-target_link_libraries(main PRIVATE spdlog::spdlog fmt::fmt)
+target_link_libraries(main PRIVATE spdlog::spdlog fmt::fmt CURL::libcurl)

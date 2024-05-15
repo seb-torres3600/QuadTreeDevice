@@ -17,8 +17,9 @@ class Device{
         std::string getDeviceIdentifier();
         void setConfiguration(std::string config_file);
         float getThreshold();
+        std:: string getCurlUrl();
         std:: vector<float> getSizeOfArea();
-        std::shared_ptr<spdlog::logger> logger = Logger::getLogger();
+        int getInterval();
         
     private:
         Device();
@@ -27,6 +28,11 @@ class Device{
         std::string device_identifier;
         static Device* device;
         nlohmann:: json config;
+        std::shared_ptr<spdlog::logger> logger = Logger::getLogger();
+        std:: string getApiHost();
+        std:: string getApiPort();
+        std:: string getApiEndpoint();
+        std:: string getDataTable();
 
 };
 

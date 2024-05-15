@@ -10,6 +10,7 @@
 class Data{
     private:
         Data();
+        ~Data();
         static Data* data_set;
         nlohmann::json data;
         std::string file;

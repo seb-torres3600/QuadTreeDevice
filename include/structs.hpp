@@ -6,6 +6,7 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
+
 struct NodeBoundaries {
     float bottom_x;
     float bottom_y;
@@ -103,7 +104,7 @@ struct Zone {
             } else if (this->shape == "RECTANGLE"){
                 this->rectangle = Rectangle(coordinates);
             } else {
-                std:: cout << "Shape is not recognized" << std::endl;
+                std:: cout << "Unknown shape: " << this->shape << std::endl;
             }
         }
     }

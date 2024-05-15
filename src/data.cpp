@@ -4,7 +4,12 @@
 Data* Data :: data_set = NULL;
 
 Data :: Data(){
-};
+
+}
+
+Data :: ~Data(){
+    delete data_set;
+}
 
 Data* Data :: getInstance(){
     if (data_set == NULL){
