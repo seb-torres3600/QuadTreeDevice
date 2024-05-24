@@ -1,5 +1,5 @@
 {   
-    "api_host": "http://stoic_chatterjee",
+    "api_host": "http://quadtreeAPI",
     "api_port": 8080,
     "zones_endpoint": "get_zones",
     "database_table": "data",

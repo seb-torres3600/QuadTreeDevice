@@ -31,4 +31,4 @@ RUN cmake --build ./build
 RUN mv ./build/main ./main
 
 # Specify the command to run on container start
-CMD ["./build/main", "--debug_level", "3"]
+CMD ["./main", "--debug_level", "3"]

@@ -146,16 +146,10 @@ int main(int argc, char* argv[]){
     }
 
     logger->flush();
-    // int a = 0;
     while(true){ 
         NodeBoundaries current_boundaries = data_tree->getBoundaries();
         Point current_location = *device->getLocation();
         float threshold = device->getThreshold();
-        /*
-        if(a == 5){
-            return 0;
-        }
-        */
         if(needToRefresh(current_boundaries, current_location, threshold)){
             logger->critical("**** Need to refresh zones ***");
             std::vector<float> current_size = device->getSizeOfArea();
@@ -170,7 +164,6 @@ int main(int argc, char* argv[]){
         }
         data_tree->search(current_location);
         std::this_thread::sleep_for(std::chrono::seconds(device->getInterval()));
-        // a++;
     }
 
 }
